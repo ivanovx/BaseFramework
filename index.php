@@ -2,7 +2,8 @@
 
 session_start();
  
-require_once("inc/config.php");
+require_once("config.php");
+
 
 $requestParts = explode('/', parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH));
 $controllerName = DEFAULT_CONTROLLER;
@@ -45,5 +46,3 @@ function __autoload($class_name) {
         include "models/$class_name.php";
     }
 }
-    
-

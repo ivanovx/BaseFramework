@@ -20,5 +20,5 @@ class ProjectsModel extends BaseModel {
                 "desc" => "Node chat system using web socket"
             )
         );
-    }   
+    }
 }

@@ -12,6 +12,8 @@
                 }
             ?>
         </title>
+        
+        <link rel="stylesheet" href="/content/css/style.css" />
     </head>
     <body>
         <nav>
