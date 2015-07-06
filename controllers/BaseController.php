@@ -23,7 +23,7 @@ abstract class BaseController {
     public function index() {
         
     }
-
+    // Todo set phtml
     public function renderView($viewName = null, $includeLayout = true) {
         if (!$this->isViewRendered) {
             if ($viewName == null) {

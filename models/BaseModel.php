@@ -1,4 +1,5 @@
 <?php
+
 abstract class BaseModel {
     protected static $db;
 
@@ -6,10 +7,10 @@ abstract class BaseModel {
         if (self::$db == null) {
             self::$db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
             self::$db->set_charset("utf8");
+			
             if (self::$db->connect_error) {
-                die('Cannot connect to database');
+                die("Cannot connect to database");
             }
         }
     }
 }
-
