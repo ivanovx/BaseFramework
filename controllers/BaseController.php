@@ -10,6 +10,7 @@ abstract class BaseController {
     public function __construct($controllerName, $actionName) {
         $this->controllerName = $controllerName;
         $this->actionName = $actionName;
+        
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $this->isPost = true;
         }
@@ -19,18 +20,16 @@ abstract class BaseController {
     public function onInit() {
         
     }
-
-    public function index() {
-        
-    }
-    // Todo set phtml
+    
+    // Test
+    public abstract function index();
+  
     public function renderView($viewName = null, $includeLayout = true) {
         if (!$this->isViewRendered) {
             if ($viewName == null) {
                 $viewName = $this->actionName;
             }
-            $viewFileName = 'views/' . $this->controllerName
-                . '/' . $viewName . '.php';
+            $viewFileName = 'views/' . $this->controllerName . '/' . $viewName . '.php';
             if ($includeLayout) {
                 $headerFile = 'views/layout/' . $this->layoutName . '/header.php';
                 include_once($headerFile);
@@ -49,8 +48,7 @@ abstract class BaseController {
         die;
     }
 
-    public function redirect(
-            $controllerName, $actionName = null, $params = null) {
+    public function redirect( $controllerName, $actionName = null, $params = null ) {
         $url = '/' . urlencode($controllerName);
         if ($actionName != null) {
             $url .= '/' . urlencode($actionName);
@@ -62,7 +60,7 @@ abstract class BaseController {
         $this->redirectToUrl($url);
     }
 
-    function addMessage($msg, $type) {
+    public function addMessage($msg, $type) {
         if (!isset($_SESSION['messages'])) {
             $_SESSION['messages'] = array();
         };
@@ -70,12 +68,11 @@ abstract class BaseController {
             array('text' => $msg, 'type' => $type));
     }
 
-    function addInfoMessage($msg) {
+    public function addInfoMessage($msg) {
         $this->addMessage($msg, 'info');
     }
 
-    function addErrorMessage($msg) {
+    public function addErrorMessage($msg) {
         $this->addMessage($msg, 'error');
     }
 }
-

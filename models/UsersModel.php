@@ -1,26 +1,26 @@
 <?php
 
-class AuthorsModel extends BaseModel {
+class UsersModel extends BaseModel {
     public function getAll() {
         $statement = self::$db->query(
-            "SELECT * FROM authors ORDER BY id");
+            "SELECT * FROM users ORDER BY id");
         return $statement->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function createAuthor($name) {
+    public function createUser($name) {
         if ($name == '') {
             return false;
         }
         $statement = self::$db->prepare(
-            "INSERT INTO authors VALUES(NULL, ?)");
+            "INSERT INTO users VALUES(NULL, ?)");
         $statement->bind_param("s", $name);
         $statement->execute();
         return $statement->affected_rows > 0;
     }
 
-    public function deleteAuthor($id) {
+    public function deleteUser($id) {
         $statement = self::$db->prepare(
-            "DELETE FROM authors WHERE id = ?");
+            "DELETE FROM users WHERE id = ?");
         $statement->bind_param("i", $id);
         $statement->execute();
         return $statement->affected_rows > 0;
