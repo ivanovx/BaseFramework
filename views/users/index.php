@@ -1,6 +1,6 @@
 <h1><?= htmlspecialchars($this->title) ?></h1>
 
-<table class="table">
+<table class="table table-bordered">
     <tr>
         <th>ID</th>
         <th>Name</th>
@@ -8,7 +8,7 @@
     </tr>
     <?php foreach ($this->users as $user) : ?>
         <tr>
-            <td><?= $user['ID'] ?></td>
+            <td><?= $user["ID"] ?></td>
             <td><?= htmlspecialchars($user['Name']) ?></td>
             <td><a href="/users/delete/<?= $user['ID']?> ">[Delete]</a></td>
         </tr>
