@@ -17,7 +17,7 @@ abstract class BaseController {
         $this->onInit();
     }
 
-    public  function onInit() {
+    protected function onInit() {
         
     }
     
