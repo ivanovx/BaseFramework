@@ -1,5 +1,6 @@
 CREATE TABLE Users
 (
-ID int,
-Name varchar(300)
+ID int NOT NULL AUTO_INCREMENT,
+Name varchar(300),
+PRIMARY KEY (ID)
 );

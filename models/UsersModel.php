@@ -2,7 +2,7 @@
 
 class UsersModel extends BaseModel {
     public function getAll() {
-        $statement = self::$db->query("SELECT * FROM users ORDER BY id");
+        $statement = self::$db->query("SELECT * FROM users ORDER BY ID");
          
         return $statement->fetch_all(MYSQLI_ASSOC);
     }
@@ -11,8 +11,7 @@ class UsersModel extends BaseModel {
         if ($name == "") {
             return false;
         }
-        $id = 3;
-        $statement = self::$db->prepare("INSERT INTO users VALUES(1 + $id, ?)");
+        $statement = self::$db->prepare("INSERT INTO users VALUES(NULL, ?)");
         $statement->bind_param("s", $name);
         $statement->execute();
         
@@ -20,7 +19,7 @@ class UsersModel extends BaseModel {
     }
 
     public function deleteUser($id) {
-        $statement = self::$db->prepare("DELETE FROM users WHERE id = ?");
+        $statement = self::$db->prepare("DELETE FROM users WHERE ID = ?");
         $statement->bind_param("i", $id);
         $statement->execute();
         
