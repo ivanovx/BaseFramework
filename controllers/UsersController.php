@@ -11,13 +11,13 @@ class UsersController extends BaseController {
     public function index() {
         $this->users = $this->db->getAll();
     }
-
+    
     public function create() {
         if ($this->isPost) {
-            $name = $_POST['user_name'];
+            $name = $_POST["user_name"];
             if ($this->db->createUser($name)) {
                 $this->addInfoMessage("User created.");
-                $this->redirect('users');
+                $this->redirect("users");
             } else {
                 $this->addErrorMessage("Error creating author.");
             }
@@ -30,6 +30,6 @@ class UsersController extends BaseController {
         } else {
             $this->addErrorMessage("Cannot delete author.");
         }
-        $this->redirect('users');
+        $this->redirect("users");
     }
 }
