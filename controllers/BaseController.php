@@ -21,8 +21,9 @@ abstract class BaseController {
         
     }
     
-    // Test
-    public abstract function index();
+    public function index() {
+        
+    }
   
     public function renderView($viewName = null, $includeLayout = true) {
         if (!$this->isViewRendered) {

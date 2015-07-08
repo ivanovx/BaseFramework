@@ -15,4 +15,4 @@
     <?php endforeach ?>
 </table>
 
-<a href="/users/create">[New]</a>
+<a href="/users/create" class="btn btn-default">New</a>
