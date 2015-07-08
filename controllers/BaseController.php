@@ -1,12 +1,12 @@
 <?php
 
 abstract class BaseController {
-    protected $controllerName;
-    protected $actionName;
-    protected $layoutName = DEFAULT_LAYOUT;
-    protected $isViewRendered = false;
-    protected $isPost = false;
-
+    private $controllerName;
+    private $actionName;
+    private $layoutName = DEFAULT_LAYOUT;
+    private $isViewRendered = false;
+    private $isPost = false;
+   
     public function __construct($controllerName, $actionName) {
         $this->controllerName = $controllerName;
         $this->actionName = $actionName;

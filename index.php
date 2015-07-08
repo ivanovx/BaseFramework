@@ -4,13 +4,13 @@ session_start();
  
 require_once("config.php");
 
-if(ENVIROMENT == "production") {
+if(ENVIRONMENT == "production") {
 	require_once("config/production.php");
 } else {
 	require_once("config/development.php");
 }
 
-$requestParts = explode('/', parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH));
+$requestParts = explode("/", parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH));
 $controllerName = DEFAULT_CONTROLLER;
 
 if (count($requestParts) >= 2 && $requestParts[1] != '') {

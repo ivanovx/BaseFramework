@@ -1,6 +1,6 @@
 <?php
 
-define("ENVIROMENT", "development");
+define("ENVIRONMENT", "developmnet");
 
 define("DEFAULT_CONTROLLER", "home");
 define("DEFAULT_ACTION", "index");
