@@ -1,11 +1,11 @@
 <?php
 
 abstract class BaseController {
-    private $controllerName;
-    private $actionName;
-    private $layoutName = DEFAULT_LAYOUT;
-    private $isViewRendered = false;
-    private $isPost = false;
+    protected $controllerName;
+    protected $actionName;
+    protected $layoutName = DEFAULT_LAYOUT;
+    protected $isViewRendered = false;
+    protected $isPost = false;
    
     public function __construct($controllerName, $actionName) {
         $this->controllerName = $controllerName;
@@ -17,11 +17,9 @@ abstract class BaseController {
         $this->onInit();
     }
 
-    protected function onInit() {
-        
-    }
-    
-    public abstract function index();
+    public function onInit() { }
+	
+    public function index() { }
   
     public function renderView($viewName = null, $includeLayout = true) {
         if (!$this->isViewRendered) {

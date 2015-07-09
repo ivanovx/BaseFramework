@@ -4,12 +4,6 @@ session_start();
  
 require_once("config.php");
 
-if(ENVIRONMENT == "production") {
-	require_once("config/production.php");
-} else {
-	require_once("config/development.php");
-}
-
 $requestParts = explode("/", parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH));
 $controllerName = DEFAULT_CONTROLLER;
 
@@ -34,14 +28,13 @@ if (class_exists($controllerClassName)) {
 }
 
 if (method_exists($controller, $action)) {
-    //$controller->{$action}($params);
     call_user_func_array(array($controller, $action), $params);
     $controller->renderView();
 } else {
     die("Cannot find action '$action' in controller '$controllerClassName'");
 }
 
-$controller->renderView();
+//$controller->renderView();
 
 function __autoload($class_name) {
     if (file_exists("controllers/$class_name.php")) {
