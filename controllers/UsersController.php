@@ -4,17 +4,18 @@ class UsersController extends BaseController {
     private $db;
 
     public function onInit() {
-        $this->title = "Users";
         $this->db = new UsersModel();
     }
 
     public function index() {
+    	$this->title = "Users";
         $this->users = $this->db->getAll();
     }
     
     public function create() {
+    	$this->title = "Create";
         if ($this->isPost) {
-            $name = $_POST["user_name"];
+            $name = $_POST["username"];
             if ($this->db->createUser($name)) {
                 $this->addInfoMessage("User created.");
                 $this->redirect("users");

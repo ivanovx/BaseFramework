@@ -13,11 +13,11 @@
             ?>
         </title>
         
-        <link rel="stylesheet" href="/content/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="/content/css/style.css" />
+        <link rel="stylesheet" href="/public/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/public/css/style.css" />
         
-        <script src="/content/js/jquery.min.js"></script>
-        <script src="/content/js/bootstrap.min.js"></script> 
+        <script src="/public/js/jquery.min.js"></script>
+        <script src="/public/js/bootstrap.min.js"></script> 
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">

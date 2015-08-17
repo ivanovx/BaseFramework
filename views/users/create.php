@@ -2,9 +2,9 @@
 
 <form method="post" action="/users/create">
     <div class="form-group">
-        <label for="user_name" class="col-sm-1 control-label">Name</label>
+        <label for="username" class="col-sm-1 control-label">Name</label>
         <div class="col-sm-11">
-            <input type="text" name="user_name" class="form-control" placeholder="Name" />
+            <input type="text" name="username" class="form-control" placeholder="Name" />
         </div>
     </div>    
     <button type="submit" class="btn btn-default">Create</button>

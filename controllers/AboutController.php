@@ -1,7 +1,7 @@
 <?php
 
 class AboutController extends BaseController {
-    public function onInit() {
+    public function index() {
         $this->title = "About";
     }
 }
