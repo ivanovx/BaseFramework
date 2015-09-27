@@ -34,7 +34,6 @@ if (method_exists($controller, $action)) {
     die("Cannot find action '$action' in controller '$controllerClassName'");
 }
 
-//$controller->renderView();
 
 function __autoload($class_name) {
     if (file_exists("controllers/$class_name.php")) {
